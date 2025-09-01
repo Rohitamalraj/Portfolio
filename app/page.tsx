@@ -4,6 +4,7 @@ import { About } from "@/components/about"
 import { Projects } from "@/components/projects"
 import { Skills } from "@/components/skills"
 import { Hobbies } from "@/components/hobbies"
+import { Contact } from "@/components/contact"
 import { AppverseFooter } from "@/components/appverse-footer"
 import Script from "next/script"
 
@@ -77,6 +78,7 @@ export default function Page() {
         <Projects />
         <Skills />
         <Hobbies />
+        <Contact />
         <AppverseFooter />
       </main>
 

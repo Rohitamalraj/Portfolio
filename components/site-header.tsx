@@ -12,7 +12,7 @@ export function SiteHeader() {
     { href: "#about", label: "About Me", icon: User },
     { href: "#projects", label: "Projects", icon: Briefcase },
     { href: "#skills", label: "Skills", icon: Award },
-    { href: "#contact", label: "Contact", icon: Mail },
+    { href: "#hobbies", label: "Hobbies", icon: Mail },
   ]
 
   return (

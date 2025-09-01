@@ -12,7 +12,7 @@ export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
   itemClassName = "",
 }) => (
   <div
-    className={`scroll-stack-card relative w-full h-96 my-8 p-8 rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 border border-lime-400/20 backdrop-blur-sm shadow-[0_0_30px_rgba(132,204,22,0.1)] box-border origin-top will-change-transform ${itemClassName}`.trim()}
+    className={`scroll-stack-card relative w-full h-96 my-8 p-8 rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 border border-lime-400/20 backdrop-blur-sm shadow-[0_0_30px_rgba(132,204,22,0.1)] box-border origin-top will-change-transform transition-transform duration-75 ease-out ${itemClassName}`.trim()}
     style={{
       backfaceVisibility: "hidden",
       transformStyle: "preserve-3d",
@@ -90,7 +90,10 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
 
       const cardRect = card.getBoundingClientRect();
       const cardTop = cardRect.top + scrollTop;
-      const triggerStart = cardTop - stackPositionPx - (itemStackDistance * i);
+      const cardHeight = cardRect.height;
+      // Center-based trigger: effect starts when card center reaches viewport center
+      const centerOffset = (cardHeight / 2) - (windowHeight / 2);
+      const triggerStart = cardTop + centerOffset - (itemStackDistance * i);
       const triggerEnd = cardTop - scaleEndPositionPx;
       const pinStart = cardTop - stackPositionPx - (itemStackDistance * i);
       const pinEnd = endElementTop - windowHeight / 2;
@@ -106,7 +109,10 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         for (let j = 0; j < cardsRef.current.length; j++) {
           const jCardRect = cardsRef.current[j].getBoundingClientRect();
           const jCardTop = jCardRect.top + scrollTop;
-          const jTriggerStart = jCardTop - stackPositionPx - (itemStackDistance * j);
+          const jCardHeight = jCardRect.height;
+          // Use same center-based trigger logic for blur calculation
+          const jCenterOffset = (jCardHeight / 2) - (windowHeight / 2);
+          const jTriggerStart = jCardTop + jCenterOffset - (itemStackDistance * j);
           if (scrollTop >= jTriggerStart) {
             topCardIndex = j;
           }
@@ -128,18 +134,18 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       }
 
       const newTransform = {
-        translateY: Math.round(translateY * 100) / 100,
-        scale: Math.round(scale * 1000) / 1000,
-        rotation: Math.round(rotation * 100) / 100,
-        blur: Math.round(blur * 100) / 100
+        translateY: Math.round(translateY * 10) / 10,
+        scale: Math.round(scale * 100) / 100,
+        rotation: Math.round(rotation * 10) / 10,
+        blur: Math.round(blur * 10) / 10
       };
 
       const lastTransform = lastTransformsRef.current.get(i);
       const hasChanged = !lastTransform || 
-        Math.abs(lastTransform.translateY - newTransform.translateY) > 0.1 ||
-        Math.abs(lastTransform.scale - newTransform.scale) > 0.001 ||
-        Math.abs(lastTransform.rotation - newTransform.rotation) > 0.1 ||
-        Math.abs(lastTransform.blur - newTransform.blur) > 0.1;
+        Math.abs(lastTransform.translateY - newTransform.translateY) > 0.5 ||
+        Math.abs(lastTransform.scale - newTransform.scale) > 0.005 ||
+        Math.abs(lastTransform.rotation - newTransform.rotation) > 0.5 ||
+        Math.abs(lastTransform.blur - newTransform.blur) > 0.5;
 
       if (hasChanged) {
         const transform = `translate3d(0, ${newTransform.translateY}px, 0) scale(${newTransform.scale}) rotate(${newTransform.rotation}deg)`;

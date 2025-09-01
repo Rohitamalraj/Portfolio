@@ -7,38 +7,38 @@ const projects = [
   {
     id: 1,
     title: "Sports CULT",
-    description: "A full-stack sports community platform with real-time match updates, team management, and social features.",
+    description: "Designed a user interface using Canva for sports enthusiasts. Provides information about upcoming matches, venues, age categories, and event details to help users find relevant sports events.",
     tech: ["React", "Node.js", "MongoDB", "Socket.io"],
     image: "/project_images/sports_cult.png",
-    github: "https://github.com/rohitamalraj/sports-cult",
-    live: "https://sports-cult.vercel.app"
+    github: "https://www.figma.com/design/sFOE0dAUpHcsNdXPuBtQIG/SPORTS-CULT?node-id=0-1&t=HdPVtj0ZFQEJ5hbw-0",
+    live: "https://www.figma.com/design/sFOE0dAUpHcsNdXPuBtQIG/SPORTS-CULT?node-id=0-1&t=HdPVtj0ZFQEJ5hbw-0"
   },
   {
     id: 2,
     title: "DoubtSync",
-    description: "AI-powered doubt resolution platform for students with real-time collaboration and smart matching.",
+    description: "Web application connecting learners with industry professionals for real-time mentorship. Features role-based onboarding, real-time Q&A, and feedback-driven leaderboard for enhanced mentor credibility and personalized support.",
     tech: ["Next.js", "OpenAI", "PostgreSQL", "WebRTC"],
     image: "/project_images/doubtsync.png",
-    github: "https://github.com/rohitamalraj/doubtsync",
-    live: "https://doubtsync.app"
+    github: "https://github.com/Rohitamalraj/DoubtSync",
+    live: "https://github.com/Rohitamalraj/DoubtSync"
   },
   {
     id: 3,
     title: "TRACX",
-    description: "Expense tracking application with budget management, analytics, and multi-platform synchronization.",
+    description: "Decentralized application enabling blockchain-based leaderboards, NFT staking for rewards, and real-time communication. Leverages blockchain technology for secure, transparent data handling with intuitive user experience.",
     tech: ["React Native", "Firebase", "Chart.js", "Redux"],
     image: "/project_images/tracx.jpg",
-    github: "https://github.com/rohitamalraj/tracx",
-    live: "https://tracx-app.com"
+    github: "https://github.com/jonathanvineet/tracx",
+    live: "https://github.com/jonathanvineet/tracx"
   },
   {
     id: 4,
     title: "MemeMinter",
-    description: "NFT marketplace for memes with creation tools, trading features, and community governance.",
+    description: "Decentralized NFT platform for minting and trading memes through Telegram bot and web app. Powered by Sei blockchain ensuring secure ownership, seamless transactions, and fair creator monetization.",
     tech: ["Web3", "Solidity", "IPFS", "React"],
     image: "/project_images/meme_minter.png",
-    github: "https://github.com/rohitamalraj/mememinter",
-    live: "https://mememinter.io"
+    github: "https://github.com/Rohitamalraj/Meme-Minter",
+    live: "https://github.com/Rohitamalraj/Meme-Minter"
   }
 ];
 
@@ -58,12 +58,12 @@ export function Projects() {
         
         <div className="max-w-4xl mx-auto">
           <ScrollStack
-            itemDistance={100}
-            itemScale={0.05}
-            itemStackDistance={30}
-            stackPosition="20%"
-            scaleEndPosition="10%"
-            baseScale={0.85}
+            itemDistance={120}
+            itemScale={0.03}
+            itemStackDistance={20}
+            stackPosition="25%"
+            scaleEndPosition="15%"
+            baseScale={0.88}
             blurAmount={0}
           >
             {projects.map((project) => (

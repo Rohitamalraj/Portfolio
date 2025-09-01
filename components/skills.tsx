@@ -3,14 +3,54 @@
 import React from 'react';
 
 const skills = [
-  { name: "HTML", icon: "🌐", level: 95, color: "from-orange-500 to-red-500" },
-  { name: "CSS", icon: "🎨", level: 90, color: "from-blue-500 to-indigo-500" },
-  { name: "JavaScript", icon: "⚡", level: 92, color: "from-yellow-400 to-orange-500" },
-  { name: "React", icon: "⚛️", level: 88, color: "from-cyan-400 to-blue-500" },
-  { name: "Next.js", icon: "▲", level: 85, color: "from-gray-400 to-gray-600" },
-  { name: "Node.js", icon: "🟢", level: 80, color: "from-green-500 to-emerald-500" },
-  { name: "Figma", icon: "🎯", level: 75, color: "from-purple-500 to-pink-500" },
-  { name: "Solidity", icon: "💎", level: 70, color: "from-gray-600 to-slate-700" },
+  { 
+    name: "HTML", 
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png", 
+    level: 95, 
+    color: "from-orange-500 to-red-500" 
+  },
+  { 
+    name: "CSS", 
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png", 
+    level: 90, 
+    color: "from-blue-500 to-indigo-500" 
+  },
+  { 
+    name: "JavaScript", 
+    icon: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png", 
+    level: 92, 
+    color: "from-yellow-400 to-orange-500" 
+  },
+  { 
+    name: "React", 
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/1200px-React_Logo_SVG.svg.png", 
+    level: 88, 
+    color: "from-cyan-400 to-blue-500" 
+  },
+  { 
+    name: "Next.js", 
+    icon: "https://images.ctfassets.net/23aumh6u8s0i/6pjUKboBuFLvCKkE3esaFA/5f2101d6d2add5c615db5e98a553fc44/nextjs.jpeg", 
+    level: 85, 
+    color: "from-gray-400 to-gray-600" 
+  },
+  { 
+    name: "Node.js", 
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png", 
+    level: 80, 
+    color: "from-green-500 to-emerald-500" 
+  },
+  { 
+    name: "Figma", 
+    icon: "https://cdn.sanity.io/images/599r6htc/regionalized/5094051dac77593d0f0978bdcbabaf79e5bb855c-1080x1080.png?w=540&h=540&q=75&fit=max&auto=format", 
+    level: 75, 
+    color: "from-purple-500 to-pink-500" 
+  },
+  { 
+    name: "Solidity", 
+    icon: "https://metana-website-rpd-3cgq.ue1.rapydapps.cloud/wp-content/uploads/2023/08/Solidity-Logo.wine_-1024x683.png", 
+    level: 70, 
+    color: "from-gray-600 to-slate-700" 
+  },
   { name: "Web3", icon: "🌊", level: 72, color: "from-lime-400 to-green-500" },
 ];
 
@@ -46,8 +86,27 @@ export function Skills() {
               >
                 {/* Skill Icon & Name */}
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="text-3xl transform group-hover:scale-110 transition-transform duration-300">
-                    {skill.icon}
+                  <div className="w-12 h-12 transform group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                    {skill.icon.startsWith('http') ? (
+                      <img 
+                        src={skill.icon} 
+                        alt={`${skill.name} logo`}
+                        className="w-10 h-10 object-contain"
+                        onError={(e) => {
+                          // Fallback to emoji if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          target.parentElement!.innerHTML = `<span class="text-3xl">${skill.name === 'HTML' ? '🌐' : 
+                            skill.name === 'CSS' ? '🎨' : 
+                            skill.name === 'JavaScript' ? '⚡' : 
+                            skill.name === 'React' ? '⚛️' : 
+                            skill.name === 'Next.js' ? '▲' : 
+                            skill.name === 'Node.js' ? '🟢' : '💻'}</span>`;
+                        }}
+                      />
+                    ) : (
+                      <span className="text-3xl">{skill.icon}</span>
+                    )}
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors duration-300">
