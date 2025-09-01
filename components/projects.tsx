@@ -9,7 +9,7 @@ const projects = [
     title: "Sports CULT",
     description: "A full-stack sports community platform with real-time match updates, team management, and social features.",
     tech: ["React", "Node.js", "MongoDB", "Socket.io"],
-    image: "/placeholder.jpg",
+    image: "/project_images/sports_cult.png",
     github: "https://github.com/rohitamalraj/sports-cult",
     live: "https://sports-cult.vercel.app"
   },
@@ -18,7 +18,7 @@ const projects = [
     title: "DoubtSync",
     description: "AI-powered doubt resolution platform for students with real-time collaboration and smart matching.",
     tech: ["Next.js", "OpenAI", "PostgreSQL", "WebRTC"],
-    image: "/placeholder.jpg",
+    image: "/project_images/doubtsync.png",
     github: "https://github.com/rohitamalraj/doubtsync",
     live: "https://doubtsync.app"
   },
@@ -27,7 +27,7 @@ const projects = [
     title: "TRACX",
     description: "Expense tracking application with budget management, analytics, and multi-platform synchronization.",
     tech: ["React Native", "Firebase", "Chart.js", "Redux"],
-    image: "/placeholder.jpg",
+    image: "/project_images/tracx.jpg",
     github: "https://github.com/rohitamalraj/tracx",
     live: "https://tracx-app.com"
   },
@@ -36,7 +36,7 @@ const projects = [
     title: "MemeMinter",
     description: "NFT marketplace for memes with creation tools, trading features, and community governance.",
     tech: ["Web3", "Solidity", "IPFS", "React"],
-    image: "/placeholder.jpg",
+    image: "/project_images/meme_minter.png",
     github: "https://github.com/rohitamalraj/mememinter",
     live: "https://mememinter.io"
   }
@@ -103,14 +103,23 @@ export function Projects() {
                       </a>
                     </div>
                   </div>
-                  <div className="relative">
-                    <div className="aspect-video bg-gray-800/30 rounded-xl overflow-hidden border border-gray-700/50">
+                  <div className="relative group">
+                    <div className="aspect-video bg-gray-800/30 rounded-xl overflow-hidden border border-gray-700/50 group-hover:border-lime-400/30 transition-all duration-300">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
+                      {/* Overlay on hover */}
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="text-center">
+                          <h4 className="text-white font-semibold text-lg mb-2">{project.title}</h4>
+                          <p className="text-lime-400 text-sm">Click to view project</p>
+                        </div>
+                      </div>
                     </div>
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 bg-lime-400/20 rounded-xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300 -z-10"></div>
                   </div>
                 </div>
               </ScrollStackItem>
