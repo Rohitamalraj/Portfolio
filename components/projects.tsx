@@ -8,16 +8,16 @@ const projects = [
     id: 1,
     title: "Sports CULT",
     description: "Designed a user interface using Canva for sports enthusiasts. Provides information about upcoming matches, venues, age categories, and event details to help users find relevant sports events.",
-    tech: ["React", "Node.js", "MongoDB", "Socket.io"],
+    tech: ["Figma", "Canva"],
     image: "/project_images/sports_cult.png",
-    github: "https://www.figma.com/design/sFOE0dAUpHcsNdXPuBtQIG/SPORTS-CULT?node-id=0-1&t=HdPVtj0ZFQEJ5hbw-0",
-    live: "https://www.figma.com/design/sFOE0dAUpHcsNdXPuBtQIG/SPORTS-CULT?node-id=0-1&t=HdPVtj0ZFQEJ5hbw-0"
+    github: "https://www.figma.com/design/sFOE0dAUpHcsNdXPuBtQIG/SPORTS-CULT?node-id=20-147",
+    live: "https://www.figma.com/design/sFOE0dAUpHcsNdXPuBtQIG/SPORTS-CULT?node-id=20-147"
   },
   {
     id: 2,
     title: "DoubtSync",
     description: "Web application connecting learners with industry professionals for real-time mentorship. Features role-based onboarding, real-time Q&A, and feedback-driven leaderboard for enhanced mentor credibility and personalized support.",
-    tech: ["Next.js", "OpenAI", "PostgreSQL", "WebRTC"],
+    tech: ["React", "Supabase", "Tailwind CSS", "socket.io"],
     image: "/project_images/doubtsync.png",
     github: "https://github.com/Rohitamalraj/DoubtSync",
     live: "https://github.com/Rohitamalraj/DoubtSync"
@@ -26,7 +26,7 @@ const projects = [
     id: 3,
     title: "TRACX",
     description: "Decentralized application enabling blockchain-based leaderboards, NFT staking for rewards, and real-time communication. Leverages blockchain technology for secure, transparent data handling with intuitive user experience.",
-    tech: ["React Native", "Firebase", "Chart.js", "Redux"],
+    tech: ["React", "Firebase", "NFT", "Solidity"],
     image: "/project_images/tracx.jpg",
     github: "https://github.com/jonathanvineet/tracx",
     live: "https://github.com/jonathanvineet/tracx"
@@ -35,7 +35,7 @@ const projects = [
     id: 4,
     title: "MemeMinter",
     description: "Decentralized NFT platform for minting and trading memes through Telegram bot and web app. Powered by Sei blockchain ensuring secure ownership, seamless transactions, and fair creator monetization.",
-    tech: ["Web3", "Solidity", "IPFS", "React"],
+    tech: ["SEI", "Next.js", "Reddit API", "Telegram Bot"],
     image: "/project_images/meme_minter.png",
     github: "https://github.com/Rohitamalraj/Meme-Minter",
     live: "https://github.com/Rohitamalraj/Meme-Minter"

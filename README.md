@@ -111,7 +111,7 @@ This portfolio focuses on:
 - **GitHub**: [@Rohitamalraj](https://github.com/Rohitamalraj)
 - **LinkedIn**: [rohit-amal-raj](https://linkedin.com/in/rohit-amal-raj)
 - **Instagram**: [@pov.roh1t](https://instagram.com/pov.roh1t)
-- **Resume**: [Download PDF](./public/resume.pdf)
+- **Resume**: [Download PDF](./public/resume/Rohit_Resume.pdf)
 
 ## 📄 **License**
 

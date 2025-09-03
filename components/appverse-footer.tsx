@@ -41,7 +41,7 @@ export function AppverseFooter() {
           </a>
           
           <a
-            href="/resume.pdf"
+            href="/resume/Rohit_Resume.pdf"
             download="Rohit_Amal_Raj_Resume.pdf"
             className="flex items-center gap-2 px-4 py-2 bg-lime-400 text-black hover:bg-lime-300 rounded-lg transition-colors duration-300 font-medium"
           >
