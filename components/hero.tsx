@@ -1,6 +1,7 @@
 "use client"
 import { Button } from "@/components/ui/button"
 import TextType from "./TextType"
+import RotatingText from "./RotatingText"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 
@@ -89,7 +90,23 @@ export function Hero() {
                 <span className="text-lime-400 font-semibold"> matter</span>
               </p>
               <p className="text-lg text-gray-400 mt-4 font-light">
-                Computer Science Student • Web3 Developer • AI Enthusiast
+                <RotatingText
+                  texts={[
+                    'Computer Science Student • Web3 Developer • AI Enthusiast',
+                    'Full-Stack Developer • Blockchain Explorer • Tech Innovator',
+                    'Software Engineer • Problem Solver • Digital Creator'
+                  ]}
+                  mainClassName="px-2 bg-lime-400/10 text-gray-400 overflow-hidden py-1 justify-center rounded-lg border border-lime-400/20"
+                  staggerFrom="first"
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  exit={{ y: "-120%" }}
+                  staggerDuration={0.025}
+                  splitLevelClassName="overflow-hidden"
+                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                  rotationInterval={3000}
+                  splitBy="characters"
+                />
               </p>
             </div>
           </motion.div>
