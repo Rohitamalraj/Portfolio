@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { InfiniteMovingCards } from './ui/infinite-moving-cards';
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const hobbies = [
   {
@@ -32,14 +34,31 @@ const hobbies = [
 ];
 
 export function Hobbies() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
   return (
-    <section id="hobbies" className="py-16 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
+    <section ref={ref} id="hobbies" className="py-16 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(132,204,22,0.03),transparent_70%)]"></div>
-      <div className="absolute top-32 right-10 w-80 h-80 bg-lime-400/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 1 }}
+        className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(132,204,22,0.03),transparent_70%)]"
+      />
+      <motion.div 
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={isInView ? { scale: 1, opacity: 0.05 } : { scale: 0.8, opacity: 0 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+        className="absolute top-32 right-10 w-80 h-80 bg-lime-400 rounded-full blur-3xl animate-pulse delay-500"
+      />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             My <span className="text-lime-400">Hobbies</span>
           </h2>
@@ -47,26 +66,43 @@ export function Hobbies() {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Beyond coding, I'm passionate about various activities that keep me inspired and balanced
           </p>
-        </div>
+        </motion.div>
 
         {/* Infinite Moving Cards */}
-        <div className="flex flex-col items-center justify-center relative">
-          <InfiniteMovingCards
-            items={hobbies}
-            direction="right"
-            speed="slow"
-            pauseOnHover={true}
-            className="mb-8"
-          />
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex flex-col items-center justify-center relative"
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <InfiniteMovingCards
+              items={hobbies}
+              direction="right"
+              speed="slow"
+              pauseOnHover={true}
+              className="mb-8"
+            />
+          </motion.div>
           
           {/* Second row moving in opposite direction */}
-          <InfiniteMovingCards
-            items={hobbies.slice().reverse()}
-            direction="left"
-            speed="slow"
-            pauseOnHover={true}
-          />
-        </div>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+            transition={{ duration: 1, delay: 0.7 }}
+          >
+            <InfiniteMovingCards
+              items={hobbies.slice().reverse()}
+              direction="left"
+              speed="slow"
+              pauseOnHover={true}
+            />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

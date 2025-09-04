@@ -7,7 +7,7 @@ const projects = [
   {
     id: 1,
     title: "Sports CULT",
-    description: "Designed a user interface using Canva for sports enthusiasts. Provides information about upcoming matches, venues, age categories, and event details to help users find relevant sports events.",
+    description: "Designed a user interface using Figma for sports enthusiasts. Provides information about upcoming matches, venues, age categories, and event details to help users find relevant sports events.",
     tech: ["Figma", "Canva"],
     image: "/project_images/sports_cult.png",
     github: "https://www.figma.com/design/sFOE0dAUpHcsNdXPuBtQIG/SPORTS-CULT?node-id=20-147",
