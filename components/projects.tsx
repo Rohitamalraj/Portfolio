@@ -6,6 +6,42 @@ import ScrollStack, { ScrollStackItem } from './ScrollStack';
 const projects = [
   {
     id: 1,
+    title: "Legal-Lens",
+    description: "AI-Powered Legal Document Analysis Platform that transforms complex legal documents into clear, understandable insights. Using cutting-edge Google Cloud AI services and Firebase Firestore database, the platform provides comprehensive document analysis, risk assessment, and intelligent Q&A capabilities with persistent storage and cross-session continuity.",
+    tech: ["Next.js", "Google Cloud", "Firebase", "Gemini 2.5 Pro"],
+    image: "/project_images/legal-lens-logo.png",
+    github: "https://github.com/Rohitamalraj/Legal-Lens",
+    live: "https://github.com/Rohitamalraj/Legal-Lens"
+  },
+  {
+    id: 2,
+    title: "zk_STRKfi",
+    description: "A fully decentralized, privacy-preserving loan platform using Zero-Knowledge proofs verified on-chain. Ensures complete privacy and security while maintaining transparency through cryptographic verification.",
+    tech: ["Cairo 2.x", "StarkNet", "Next.js", "SnarkJS", "ZK Proofs"],
+    image: "/project_images/zk-strkfi-logo.png",
+    github: "https://github.com/Rohitamalraj/zk_STRKfi",
+    live: "https://github.com/Rohitamalraj/zk_STRKfi"
+  },
+  {
+    id: 3,
+    title: "WanderLink",
+    description: "The Web3 Era of Social Travel - a decentralized stranger-trip marketplace powered by Hedera Hashgraph Agent kit and artificial super intelligence agents, with decentralized storage through Lighthouse datacoin.",
+    tech: ["Hedera Hashgraph", "AI Agents", "Lighthouse", "Web3"],
+    image: "/project_images/wanderlink.jpg",
+    github: "https://github.com/Rohitamalraj/WanderLink",
+    live: "https://github.com/Rohitamalraj/WanderLink"
+  },
+  {
+    id: 4,
+    title: "StartupSeal",
+    description: "Provably Authentic Truth Engine & Trust Oracle that eliminates startup fraud through cryptographic verification, AI analysis, and blockchain immutability. Built on Sui blockchain with Walrus for decentralized storage.",
+    tech: ["Walrus", "Sui Blockchain", "Nautilus", "AI Analysis"],
+    image: "/project_images/startupseal.png",
+    github: "https://github.com/Rohitamalraj/StartupSeal",
+    live: "https://github.com/Rohitamalraj/StartupSeal"
+  },
+  {
+    id: 5,
     title: "Sports CULT",
     description: "Designed a user interface using Figma for sports enthusiasts. Provides information about upcoming matches, venues, age categories, and event details to help users find relevant sports events.",
     tech: ["Figma", "Canva"],
@@ -14,7 +50,7 @@ const projects = [
     live: "https://www.figma.com/design/sFOE0dAUpHcsNdXPuBtQIG/SPORTS-CULT?node-id=20-147"
   },
   {
-    id: 2,
+    id: 6,
     title: "DoubtSync",
     description: "Web application connecting learners with industry professionals for real-time mentorship. Features role-based onboarding, real-time Q&A, and feedback-driven leaderboard for enhanced mentor credibility and personalized support.",
     tech: ["React", "Supabase", "Tailwind CSS", "socket.io"],
@@ -23,7 +59,7 @@ const projects = [
     live: "https://github.com/Rohitamalraj/DoubtSync"
   },
   {
-    id: 3,
+    id: 7,
     title: "TRACX",
     description: "Decentralized application enabling blockchain-based leaderboards, NFT staking for rewards, and real-time communication. Leverages blockchain technology for secure, transparent data handling with intuitive user experience.",
     tech: ["React", "Firebase", "NFT", "Solidity"],
@@ -32,7 +68,7 @@ const projects = [
     live: "https://github.com/jonathanvineet/tracx"
   },
   {
-    id: 4,
+    id: 8,
     title: "MemeMinter",
     description: "Decentralized NFT platform for minting and trading memes through Telegram bot and web app. Powered by Sei blockchain ensuring secure ownership, seamless transactions, and fair creator monetization.",
     tech: ["SEI", "Next.js", "Reddit API", "Telegram Bot"],
