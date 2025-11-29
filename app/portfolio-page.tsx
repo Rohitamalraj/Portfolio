@@ -43,16 +43,30 @@ export default function Page() {
   const pageStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://rohitamalraj.com/",
-    name: "Rohit Amal Raj | Computer Science Student & Full Stack Developer",
+    "@id": "https://theskitbit.com/",
+    name: "Skitbit | 3D Animation Made Simple, Reliable & Scalable",
     description:
-      "Passionate Computer Science student with expertise in software development, Web3, AI, and blockchain technologies. Explore my portfolio of innovative projects.",
-    url: "https://rohitamalraj.com/",
+      "From product launches to full-scale campaigns, Skitbit delivers 3D animation that’s fast, consistent, and built to wow your audience.",
+    url: "https://theskitbit.com/",
     mainEntity: {
-      "@type": "Person",
-      name: "Rohit Amal Raj",
-      url: "https://rohitamalraj.com",
+      "@type": "Organization",
+      name: "Skitbit",
+      url: "https://theskitbit.com",
+      sameAs: [
+        "https://twitter.com/theskitbit",
+        "https://www.youtube.com/@skitbitinternational",
+        "https://instagram.com/theskitbit",
+        "https://threads.com/theskitbit",
+      ],
     },
+    hasPart: [
+      {
+        "@type": "WebPageElement",
+        "@id": "https://theskitbit.com/#pricing",
+        name: "Pricing Section",
+        url: "https://theskitbit.com/#pricing",
+      },
+    ],
   }
 
   return (

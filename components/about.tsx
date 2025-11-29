@@ -54,7 +54,7 @@ export function About() {
                 whileHover={{ scale: 1.05 }}
                 className="text-center p-4 bg-gray-900/30 rounded-lg border border-gray-800"
               >
-                <h3 className="text-2xl font-bold text-lime-400">4+</h3>
+                <h3 className="text-2xl font-bold text-lime-400">8+</h3>
                 <p className="text-sm text-gray-400">Projects Completed</p>
               </motion.div>
               <motion.div 
