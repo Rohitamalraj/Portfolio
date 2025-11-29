@@ -7,20 +7,20 @@ const projects = [
   {
     id: 1,
     title: "Legal-Lens",
-    description: "AI-Powered Legal Document Analysis Platform that transforms complex legal documents into clear, understandable insights. Using cutting-edge Google Cloud AI services and Firebase Firestore database, the platform provides comprehensive document analysis, risk assessment, and intelligent Q&A capabilities with persistent storage and cross-session continuity.",
-    tech: ["Next.js", "Google Cloud", "Firebase", "Gemini 2.5 Pro"],
+    description: "AI-Powered Legal Document Analysis Platform that transforms complex legal documents into clear, understandable insights. Provides comprehensive document analysis, risk assessment, and intelligent Q&A capabilities with persistent storage and cross-session continuity.",
+    tech: ["Google Cloud", "Firebase", "Gemini 2.5 Pro"],
     image: "/project_images/legal-lens-logo.png",
     github: "https://github.com/Rohitamalraj/Legal-Lens",
-    live: "https://github.com/Rohitamalraj/Legal-Lens"
+    live: "https://legal-lens-genaii.vercel.app/about"
   },
   {
     id: 2,
-    title: "zk_STRKfi",
+    title: "zk-STRKfi",
     description: "A fully decentralized, privacy-preserving loan platform using Zero-Knowledge proofs verified on-chain. Ensures complete privacy and security while maintaining transparency through cryptographic verification.",
-    tech: ["Cairo 2.x", "StarkNet", "Next.js", "SnarkJS", "ZK Proofs"],
+    tech: ["Cairo 2.x", "StarkNet", "Next.js", "ZK Proofs"],
     image: "/project_images/zk-strkfi-logo.png",
-    github: "https://github.com/Rohitamalraj/zk_STRKfi",
-    live: "https://github.com/Rohitamalraj/zk_STRKfi"
+    github: "https://github.com/Rohitamalraj/zk-STRKfi",
+    live: "https://zk-str-kfi.vercel.app/"
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const projects = [
     tech: ["Hedera Hashgraph", "AI Agents", "Lighthouse", "Web3"],
     image: "/project_images/wanderlink.jpg",
     github: "https://github.com/Rohitamalraj/WanderLink",
-    live: "https://github.com/Rohitamalraj/WanderLink"
+    live: "https://wander-link-ethonline.vercel.app/"
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const projects = [
     tech: ["Walrus", "Sui Blockchain", "Nautilus", "AI Analysis"],
     image: "/project_images/startupseal.png",
     github: "https://github.com/Rohitamalraj/StartupSeal",
-    live: "https://github.com/Rohitamalraj/StartupSeal"
+    live: "https://startupseal.vercel.app/"
   },
   {
     id: 5,
@@ -144,7 +144,7 @@ export function Projects() {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                       />
                       {/* Overlay on hover */}
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
